@@ -1,0 +1,3 @@
+# Apply the btfl-redact filter to all files except scripts
+*           filter=btfl-redact
+*.sh        filter=
