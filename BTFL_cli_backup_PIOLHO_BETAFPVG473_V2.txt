@@ -60,6 +60,7 @@ set dyn_notch_min_hz = 120
 set dyn_notch_max_hz = 400
 set gyro_lpf1_dyn_min_hz = 0
 set gyro_lpf1_dyn_max_hz = 550
+set acc_trim_roll = 2
 set acc_calibration = -34,1,-46,1
 set blackbox_device = NONE
 set blackbox_disable_pids = ON
@@ -120,9 +121,9 @@ set osd_canvas_height = 13
 set system_hse_mhz = 8
 set debug_mode = GYRO_SCALED
 set vtx_band = 5
-set vtx_channel = 2
+set vtx_channel = 1
 set vtx_power = 1
-set vtx_freq = 5695
+set vtx_freq = 5658
 set craft_name = piolho
 set pilot_name = samueloph
 
@@ -196,10 +197,13 @@ set tpa_breakpoint = 1180
 
 profile 2
 
+# profile 2
+set dyn_idle_min_rpm = 80
+
 profile 3
 
 # restore original profile selection
-profile 0
+profile 2
 
 rateprofile 0
 
