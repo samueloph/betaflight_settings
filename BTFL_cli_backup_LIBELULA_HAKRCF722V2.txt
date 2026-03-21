@@ -19,6 +19,7 @@ signature REDACTED
 # name: libelula
 
 # feature
+feature -AIRMODE
 feature GPS
 feature TELEMETRY
 feature LED_STRIP
@@ -29,11 +30,16 @@ serial 0 64 115200 57600 0 115200
 serial 3 8192 115200 57600 0 115200
 serial 5 2 115200 57600 0 115200
 
-# beacon
-beacon RX_SET
-
 # aux
-aux 0 0 0 900 1200 0 0
+aux 0 0 0 1700 2100 0 0
+aux 1 1 1 900 1300 0 0
+aux 2 2 1 1300 1700 0 0
+aux 3 13 2 1300 1700 0 0
+aux 4 28 3 1475 2100 0 0
+aux 5 35 2 1700 2100 0 0
+
+# adjrange
+adjrange 0 0 4 900 2100 12 4 0 0
 
 # vtxtable
 vtxtable bands 5
@@ -60,6 +66,7 @@ set dshot_bidir = ON
 set motor_pwm_protocol = DSHOT300
 set failsafe_procedure = GPS-RESCUE
 set vbat_max_cell_voltage = 440
+set vbat_warning_cell_voltage = 345
 set yaw_motors_reversed = ON
 set small_angle = 180
 set gps_ublox_use_galileo = ON
@@ -82,6 +89,7 @@ set osd_home_dir_pos = 2146
 set osd_home_dist_pos = 2113
 set osd_warnings_pos = 14665
 set osd_avg_cell_voltage_pos = 2465
+set osd_rate_profile_name_pos = 2475
 set osd_displayport_device = AUTO
 set osd_canvas_width = 30
 set osd_canvas_height = 16
@@ -102,6 +110,8 @@ set dterm_lpf1_dyn_min_hz = 82
 set dterm_lpf1_dyn_max_hz = 165
 set dterm_lpf1_static_hz = 82
 set dterm_lpf2_static_hz = 165
+set vbat_sag_compensation = 100
+set crash_recovery = ON
 set d_pitch = 41
 set f_pitch = 37
 set d_roll = 27
@@ -111,6 +121,7 @@ set d_min_roll = 27
 set d_min_pitch = 41
 set feedforward_averaging = 2_POINT
 set feedforward_smooth_factor = 45
+set feedforward_jitter_factor = 0
 set dyn_idle_min_rpm = 25
 set simplified_d_gain = 90
 set simplified_dmax_gain = 0
@@ -130,16 +141,48 @@ profile 0
 rateprofile 0
 
 # rateprofile 0
-set roll_expo = 30
-set pitch_expo = 30
-set yaw_expo = 30
-set roll_srate = 60
-set pitch_srate = 60
-set yaw_srate = 60
+set rateprofile_name = scale60
+set roll_rc_rate = 16
+set pitch_rc_rate = 16
+set yaw_rc_rate = 16
+set roll_expo = 56
+set pitch_expo = 56
+set yaw_expo = 56
+set roll_srate = 53
+set pitch_srate = 53
+set yaw_srate = 53
+set throttle_limit_type = SCALE
+set throttle_limit_percent = 60
 
 rateprofile 1
 
+# rateprofile 1
+set rateprofile_name = scale70
+set roll_rc_rate = 16
+set pitch_rc_rate = 16
+set yaw_rc_rate = 16
+set roll_expo = 56
+set pitch_expo = 56
+set yaw_expo = 56
+set roll_srate = 53
+set pitch_srate = 53
+set yaw_srate = 53
+set throttle_limit_type = SCALE
+set throttle_limit_percent = 70
+
 rateprofile 2
+
+# rateprofile 2
+set rateprofile_name = scaleoff
+set roll_rc_rate = 16
+set pitch_rc_rate = 16
+set yaw_rc_rate = 16
+set roll_expo = 56
+set pitch_expo = 56
+set yaw_expo = 56
+set roll_srate = 53
+set pitch_srate = 53
+set yaw_srate = 53
 
 rateprofile 3
 
