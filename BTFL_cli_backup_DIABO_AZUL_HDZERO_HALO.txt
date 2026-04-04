@@ -1,0 +1,137 @@
+defaults nosave
+
+
+# version
+# Betaflight / STM32H743 (SH74) 4.5.3.KAACK_V18 Mar 25 2026 / 14:16:59 (aafe4102e) MSP API: 1.46
+# config rev: edb8a26
+
+# start the command batch
+batch start
+
+# reset configuration to default settings
+defaults nosave
+
+board_name HDZERO_HALO
+manufacturer_id HDZO
+mcu_id REDACTED
+signature REDACTED
+
+# name: diabo azul
+
+# aux
+aux 0 0 0 1700 2100 0 0
+aux 1 35 1 1700 2100 0 0
+
+# vtxtable
+vtxtable bands 6
+vtxtable channels 8
+vtxtable band 1 BOSCAM_A A CUSTOM     0    0    0    0    0    0    0    0
+vtxtable band 2 BOSCAM_B B CUSTOM     0    0    0    0    0    0    0    0
+vtxtable band 3 BOSCAM_E E CUSTOM  5705    0    0    0    0    0    0    0
+vtxtable band 4 FATSHARK F CUSTOM  5740 5760    0 5800    0    0    0    0
+vtxtable band 5 RACEBAND R CUSTOM  5658 5695 5732 5769 5806 5843 5880 5917
+vtxtable band 6 LOWBAND  L CUSTOM     0    0    0    0    0    0    0    0
+vtxtable powerlevels 3
+vtxtable powervalues 14 23 0
+vtxtable powerlabels 25 200 0
+
+# master
+set gyro_lpf1_static_hz = 0
+set gyro_lpf2_static_hz = 600
+set dyn_notch_count = 2
+set dyn_notch_q = 450
+set dyn_notch_min_hz = 125
+set dyn_notch_max_hz = 650
+set gyro_lpf1_dyn_min_hz = 300
+set gyro_lpf1_dyn_max_hz = 600
+set acc_lpf_hz = 10
+set acc_calibration = 29,-5,-11,1
+set dshot_bidir = ON
+set align_board_roll = 180
+set yaw_motors_reversed = ON
+set simplified_gyro_filter_multiplier = 120
+set osd_vbat_pos = 2048
+set osd_rssi_pos = 27
+set osd_link_quality_pos = 3115
+set osd_tim_1_pos = 352
+set osd_tim_2_pos = 3083
+set osd_throttle_pos = 3149
+set osd_craft_name_pos = 2070
+set osd_warnings_pos = 14868
+set osd_avg_cell_voltage_pos = 2080
+set osd_spec_logo_pos = 14401
+set osd_canvas_width = 50
+set osd_canvas_height = 18
+set vtx_band = 5
+set vtx_channel = 1
+set vtx_power = 1
+set vtx_freq = 5658
+set displayport_msp_fonts = 0,0,0,0
+set rpm_filter_fade_range_hz = 100
+set craft_name = diabo azul
+
+profile 0
+
+# profile 0
+set dterm_lpf1_dyn_min_hz = 90
+set dterm_lpf1_dyn_max_hz = 180
+set dterm_lpf1_dyn_expo = 7
+set dterm_lpf1_static_hz = 90
+set dterm_lpf2_static_hz = 180
+set iterm_relax_cutoff = 20
+set iterm_limit = 500
+set pidsum_limit_yaw = 1000
+set throttle_boost = 2
+set p_pitch = 39
+set i_pitch = 85
+set d_pitch = 38
+set f_pitch = 130
+set p_roll = 36
+set i_roll = 77
+set d_roll = 33
+set f_roll = 119
+set d_min_roll = 19
+set d_min_pitch = 22
+set feedforward_max_rate_limit = 100
+set simplified_pids_mode = RP
+set simplified_master_multiplier = 95
+set simplified_i_gain = 120
+set simplified_d_gain = 70
+set simplified_pi_gain = 85
+set simplified_dmax_gain = 200
+set simplified_feedforward_gain = 105
+set simplified_pitch_pi_gain = 105
+set simplified_dterm_filter_multiplier = 120
+set tpa_rate = 70
+set tpa_breakpoint = 1250
+
+profile 1
+
+profile 2
+
+profile 3
+
+# restore original profile selection
+profile 0
+
+rateprofile 0
+
+# rateprofile 0
+set rates_type = BETAFLIGHT
+set roll_rc_rate = 95
+set pitch_rc_rate = 80
+set yaw_rc_rate = 80
+set roll_srate = 70
+set pitch_srate = 70
+set yaw_srate = 70
+
+rateprofile 1
+
+rateprofile 2
+
+rateprofile 3
+
+# restore original rateprofile selection
+rateprofile 0
+
+# save configuration
