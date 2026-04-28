@@ -1,5 +1,6 @@
 defaults nosave
 
+# diff all
 
 # version
 # Betaflight / STM32H743 (SH74) 4.5.3.KAACK_V18 Mar 25 2026 / 14:16:59 (aafe4102e) MSP API: 1.46
@@ -20,10 +21,10 @@ signature REDACTED
 
 # aux
 aux 0 0 0 1700 2100 0 0
-aux 1 35 1 1700 2100 0 0
-aux 2 1 1 900 1300 0 0
-aux 3 2 1 1300 1700 0 0
-aux 4 13 2 1300 1700 0 0
+aux 1 1 1 900 1300 0 0
+aux 2 2 1 1300 1700 0 0
+aux 3 13 2 1300 1700 0 0
+aux 4 35 2 1700 2100 0 0
 aux 5 28 3 1475 2100 0 0
 
 # adjrange
@@ -70,6 +71,7 @@ set osd_warnings_pos = 14868
 set osd_avg_cell_voltage_pos = 2080
 set osd_rate_profile_name_pos = 2145
 set osd_spec_logo_pos = 14401
+set osd_stat_bitmask = 1881145508
 set osd_canvas_width = 50
 set osd_canvas_height = 18
 set vtx_band = 5
